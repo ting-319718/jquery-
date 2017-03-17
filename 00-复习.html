@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function foo() { 
+    //   this.age = 10; 
+    // } 
+    // var p1 = foo.call(null); // this -> window p1 -> undefined;
+    // console.log(p1.age); // 报错
+
+
+    var shape = function (age) { 
+      this.age = age; 
+      this.name = 'abc'; 
+      this.toString = function () { 
+        return 'abc'; 
+      }; 
+    } 
+    shape.CONSTANT = 'constant'; 
+    shape.prototype.zzk = function () { 
+      alert('你的电话号码是' + this.age); 
+    } 
+    var circle = function () { }; 
+    circle.prototype = new shape(); 
+    circle.prototype.name = "xiaoming"; 
+    var kk = new circle('18'); 
+    console.log(kk.zzk());
+    // kk -> shape实例 -> shape.prototype -> Object.prototype -> null
+  </script>
+</body>
+
+</html>

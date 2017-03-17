@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>框架的结构</title>
+</head>
+<body>
+  <div id="dv"></div>
+  <div></div>
+  <script src="itcast-0.0.2.js"></script>
+  <!--<script src="itcast.js"></script>-->
+  <script>
+    var $it = $( 'div' );
+    console.log( $it );
+
+
+    // var doms = document.querySelectorAll( 'div' );
+    // var o = {};
+    // 元素：       dom元素
+    // length含义： 包含DOM元素的个数
+    // for ( var i = 0, l = doms.length; i < l; i++ ){
+    //   o[ i ] = doms[ i ];
+    // }
+    // o.length = doms.length;
+
+    // Array.prototype.push.apply( o, doms );
+    // console.log( o );
+
+    $.prototype.addClass = function (){
+      console.log( '你可以的' );
+    };
+    $it.addClass();
+
+    console.log( $ );
+    console.log( $.fn === $.prototype );
+    console.dir( $ );
+  </script>
+</body>
+</html>
